@@ -15,7 +15,7 @@
       <fieldset>
         <legend>{text}</legend>
 
-        <input type="radio" id="not_applicable_{id}" name="answer[{id}]" value="0">
+        <input type="radio" id="not_applicable_{id}" name="answer[{id}]" value="0" required>
         <label for="not_applicable_{id}">N/A</label>
 
         <input type="radio" id="strongly_disagree_{id}" name="answer[{id}]" value="{reversed ? 5 : 1}">

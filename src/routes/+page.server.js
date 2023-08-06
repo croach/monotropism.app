@@ -23,12 +23,12 @@ export const actions = {
 
         return {
             monotropismScore: `${sum}/${numQuestions * 5}`,
-            avgScore: sum / numQuestions,
+            avgScore: (sum / numQuestions).toFixed(2),
             autisticStats: {
                 mu: 4.15,
                 sd: .347
             },
-            nonAutisticStats: {
+            allisticStats: {
                 mu: 3.19,
                 sd: .578
             }
