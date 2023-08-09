@@ -1,4 +1,8 @@
 <script>
+  // import * as Plot from "@observablehq/plot";
+  // import { onMount } from 'svelte';
+  import Plot from '$lib/components/Plot.svelte'
+
   /** @type {import('./$types').PageData} */
   export let data
 
@@ -6,9 +10,17 @@
   export let form;
 
   console.log(form)
+
+  // onMount(async () => {
+  //   if (form) {
+  //     const plot = Plot.rectY({length: 10000}, Plot.binX({y: "count"}, {x: Math.random})).plot();
+  //     const div = document.querySelector("#myplot");
+  //     div.append(plot);
+  //   }
+  // })
 </script>
 
-<div class="questions">
+<div class="centered questions">
   <form name="questionnaire" method="POST">
   
     {#each data.questions as { id, text, reversed }}
@@ -38,13 +50,23 @@
     <div class="submit-button">
       <button>Submit</button>
     </div>
+
   </form>
 </div>
 
+<div id="myplot" class="centered"></div>
+
+<div class="centered">
+  <Plot options={{ x: { domain: [100, 0] }, grid: true }} />
+</div>
+
 <style>
-  .questions {
+  .centered {
     display: flex;
     justify-content: center;
+  }
+  
+  .questions {
     padding-top: 20px;
   }
 
@@ -57,7 +79,7 @@
     border: 0;
     padding: 0 0 100px 0;
     display: grid;
-    max-width: 1200px;
+    max-width: 900px;
     grid-auto-rows: 1fr;
     gap: 2px;
     grid-template-columns: repeat(6, minmax(0, 1fr));
