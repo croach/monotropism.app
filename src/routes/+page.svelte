@@ -8,7 +8,7 @@
   console.log(form)
 </script>
 
-<div class="questions">
+<div class="centered questions">
   <form name="questionnaire" method="POST">
   
     {#each data.questions as { id, text, reversed }}
@@ -38,13 +38,17 @@
     <div class="submit-button">
       <button>Submit</button>
     </div>
+
   </form>
 </div>
 
 <style>
-  .questions {
+  .centered {
     display: flex;
     justify-content: center;
+  }
+  
+  .questions {
     padding-top: 20px;
   }
 
@@ -57,7 +61,7 @@
     border: 0;
     padding: 0 0 100px 0;
     display: grid;
-    max-width: 1200px;
+    max-width: 900px;
     grid-auto-rows: 1fr;
     gap: 2px;
     grid-template-columns: repeat(6, minmax(0, 1fr));
