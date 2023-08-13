@@ -112,4 +112,11 @@
     });
 </script>
 
-<div id="chart-container"></div>
+<div id="chart-container" class="centered"></div>
+
+<style>
+    .centered {
+        display: flex;
+        justify-content: center;
+    }
+</style>
