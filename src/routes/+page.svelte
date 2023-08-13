@@ -5,6 +5,8 @@
   /** @type {import('./$types').ActionData} */
   export let form;
 
+  import Chart from '$lib/components/Chart.svelte';
+
   console.log(form)
 </script>
 
@@ -38,6 +40,8 @@
     <div class="submit-button">
       <button>Submit</button>
     </div>
+
+    <Chart />
 
   </form>
 </div>
