@@ -12,8 +12,7 @@ export function load({ params }) {
 /** @type {import('./$types').Actions} */
 export const actions = {
     default: async (event) => {
-        const questions = Array.from(await event.request.formData()).entries();
-        // const questions = [...formData.entries()];
+        const questions = Array.from((await event.request.formData()).entries());
         const numAnswered = questions.length;
         const monotropismScore = questions.reduce((sum, q) => sum + parseInt(q[1]), 0)
         const maxMonotropismScore = numAnswered * 5;
