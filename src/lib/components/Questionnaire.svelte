@@ -2,7 +2,7 @@
     export let questions;
 </script>
   
-  <div class="centered questions">
+  <div class="centered" id= "questions">
     <form name="questionnaire" method="POST">
     
       {#each questions as { id, text, reversed }}
@@ -10,23 +10,48 @@
           <legend>{text}</legend>
   
           <input type="radio" id="not_applicable_{id}" name="answer[{id}]" value="0" required>
-          <label for="not_applicable_{id}">N/A</label>
+          <label for="not_applicable_{id}">
+            <span class="large-screen">N/A</span>
+            <span class="small-screen">0</span>
+          </label>
   
           <input type="radio" id="strongly_disagree_{id}" name="answer[{id}]" value="{reversed ? 5 : 1}">
-          <label for="strongly_disagree_{id}">Strongly disagree</label>
+          <label for="strongly_disagree_{id}">
+            <span class="large-screen">Strongly disagree</span>
+            <span class="small-screen">1</span>
+          </label>
   
           <input type="radio" id="disagree_{id}" name="answer[{id}]" value="{reversed ? 4 : 2}">
-          <label for="disagree_{id}">Disagree</label>
+          <label for="disagree_{id}">
+            <span class="large-screen">Disagree</span>
+            <span class="small-screen">2</span>
+          </label>
           
           <input type="radio" id="neither_agree_nor_disagree_{id}" name="answer[{id}]" value="{reversed ? 3 : 3}">
-          <label for="neither_agree_nor_disagree_{id}">Neither agree nor disagree</label>
+          <label for="neither_agree_nor_disagree_{id}">
+            <span class="large-screen">Neither agree nor disagree</span>
+            <span class="small-screen">3</span>
+          </label>
           
           <input type="radio" id="agree_{id}" name="answer[{id}]" value="{reversed ? 2 : 4}">
-          <label for="agree_{id}">Agree</label>
+          <label for="agree_{id}">
+            <span class="large-screen">Agree</span>
+            <span class="small-screen">4</span>
+          </label>
           
           <input type="radio" id="strongly_agree_{id}" name="answer[{id}]" value="{reversed ? 1 : 5}">
-          <label for="strongly_agree_{id}">Strongly agree</label>
+          <label for="strongly_agree_{id}">
+            <span class="large-screen">Strongly agree</span>
+            <span class="small-screen">5</span>
+          </label>
+
+          <div class="small-screen alt-labels">
+            <span>Strongly Disagree</span>
+            <span>Strongly Agree</span>
+          </div>
+
         </fieldset>
+
       {/each}
   
       <div class="submit-button">
@@ -42,8 +67,8 @@
       justify-content: center;
     }
     
-    .questions {
-      padding-top: 20px;
+    #questions {
+      padding-top: 50px;
     }
   
     .submit-button {
@@ -53,7 +78,7 @@
   
     fieldset {
       border: 0;
-      padding: 0 0 100px 0;
+      padding: 0 20px 100px 20px;
       display: grid;
       max-width: 900px;
       grid-auto-rows: 1fr;
@@ -62,14 +87,29 @@
     }
   
     fieldset > legend {
-      padding: 0 0 30px 0;
+      padding: 0 0px 30px 0px;
     }
-      /* @media only screen and (max-width: 680px) {
-          .likert {
-              grid-template-columns: minmax(0, 400px);
-              justify-content: center;
-          }
-      } */
+
+    div.alt-labels {
+        display: flex;
+        width: 100vw;
+        justify-content: space-between;
+    }
+
+    div.alt-labels > span {
+        padding: 7px 10px 0 10px;
+        font-size: 14px;
+    }
+
+    .large-screen {
+        visibility: visible;
+        display: inline;
+      }
+
+      .small-screen {
+        visibility: hidden;
+        display: none;
+      }
   
       input {
           /* max-width: 250px; */
@@ -99,14 +139,11 @@
           background: #5fc6f5;
           color: rgb(255, 255, 255);
       }
-  
-      input:focus + label {
-          /* outline: -webkit-focus-ring-color auto 1px; */
-      }
-  
-      label:hover {
-          background: #fbfafa;
-          /* outline: lightgrey auto 0.5px; */
+    
+      @media (hover: hover) {
+          label:hover {
+              background: #fbfafa;
+          }
       }
   
       button {
@@ -122,6 +159,34 @@
       button:hover {
           background-color: #5fc6f5; 
           cursor: pointer;
-      }    
+      }   
+      
+
+      @media only screen and (max-width: 680px) {
+
+        .large-screen {
+            visibility: hidden;
+            display: none;
+        }
+
+        .small-screen {
+            visibility: visible;
+            display: inline;
+        }
+
+        fieldset {
+            text-align: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        fieldset > legend {
+            padding-left: 40px;
+            padding-right: 40px; 
+        }
+
+
+    }
+
   
   </style>
