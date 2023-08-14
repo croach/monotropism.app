@@ -2,6 +2,8 @@
     import * as d3 from 'd3';
     import { onMount } from 'svelte';
 
+    export let data;
+
     // Helper functions
     function arange(start, end, step) {
         let arr = [];
@@ -109,6 +111,18 @@
         .attr("stroke-width", 1)
         .attr("opacity", 0.3)
         .attr("d", area);
+
+        // Add a line representing the user's results
+        svg.append("line")
+            .attr("x1", x(data.avgScore))
+            .attr("y1", 0)
+            .attr("x2", x(data.avgScore))
+            .attr("y2", height)
+            .attr("opacity", 0.7)
+            .style("stroke-width", 2)
+            .style("stroke-dasharray", "10 4")
+            .style("stroke", "black")
+            .style("fill", "none");
     });
 </script>
 

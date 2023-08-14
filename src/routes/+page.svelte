@@ -14,5 +14,5 @@
 {#if !form}
   <Questionnaire questions={data.questions} />
 {:else}
-  <Chart />
+  <Chart data={form} />
 {/if}
