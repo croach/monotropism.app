@@ -12,18 +12,16 @@ export function load({ params }) {
 /** @type {import('./$types').Actions} */
 export const actions = {
     default: async (event) => {
-        const data = await event.request.formData();
-        const numQuestions = 47;
-
-        let sum = 0
-        for (let i = 1; i <= numQuestions; i++) {
-            const value = data.get(`answer[${i}]`);
-            sum += value ? parseInt(value) : 0
-        }
+        const questions = Array.from(await event.request.formData()).entries();
+        // const questions = [...formData.entries()];
+        const numAnswered = questions.length;
+        const monotropismScore = questions.reduce((sum, q) => sum + parseInt(q[1]), 0)
+        const maxMonotropismScore = numAnswered * 5;
+        const avgMonotropismScore = monotropismScore / numAnswered;
 
         return {
-            monotropismScore: `${sum}/${numQuestions * 5}`,
-            avgScore: (sum / numQuestions).toFixed(2),
+            monotropismScore: `${monotropismScore}/${maxMonotropismScore}`,
+            avgScore: avgMonotropismScore.toFixed(2),
             autisticStats: {
                 mu: 4.15,
                 sd: .347

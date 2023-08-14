@@ -8,13 +8,7 @@
       {#each questions as { id, text, reversed }}
         <fieldset>
           <legend>{text}</legend>
-  
-          <input type="radio" id="not_applicable_{id}" name="answer[{id}]" value="0" required>
-          <label for="not_applicable_{id}">
-            <span class="large-screen">N/A</span>
-            <span class="small-screen">0</span>
-          </label>
-  
+    
           <input type="radio" id="strongly_disagree_{id}" name="answer[{id}]" value="{reversed ? 5 : 1}">
           <label for="strongly_disagree_{id}">
             <span class="large-screen">Strongly disagree</span>
@@ -83,7 +77,7 @@
       max-width: 900px;
       grid-auto-rows: 1fr;
       gap: 2px;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
     }
   
     fieldset > legend {
@@ -138,6 +132,10 @@
           /* opacity: 0.9; */
           background: #5fc6f5;
           color: rgb(255, 255, 255);
+      }
+
+      input:focus + label {
+        /* outline-style: dotted; */
       }
     
       @media (hover: hover) {
