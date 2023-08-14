@@ -1,8 +1,3 @@
-/* @font-face {
-    font-family: ;
-    src: url();
-} */
-
 /* Reset */
 *,*:before,*:after {
     box-sizing: border-box;
@@ -11,7 +6,7 @@
 }
 
 body {
+    width: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
-    text-rendering: optimizeLegibility;
 }
