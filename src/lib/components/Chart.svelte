@@ -28,11 +28,26 @@
     }
 
     onMount(async () => {
+        
+        const defaultWidth = 800;
+        const defaultHeight = 500;
+        const defaultRatio = defaultWidth /  defaultHeight;
 
+        const currentWidth = window.innerWidth;
+        const currentHeight = window.innerHeight;
+        const currentRatio = currentWidth / currentHeight;
+
+        let h = defaultHeight;
+        let w = defaultWidth;
+        if (currentRatio <= defaultRatio) {
+            w = currentWidth;
+            h = w / defaultRatio;
+        }
+        
         // Set dimensions and margins for the chart
-        const margin = {top: 70, right: 30, bottom: 40, left: 80};
-        const width = 800 - margin.left - margin.right;
-        const height = 500 - margin.top - margin.bottom;
+        const margin = {top: 70, right: 30, bottom: 40, left: 50};
+        const width = w - margin.left - margin.right;
+        const height = h - margin.top - margin.bottom;
         
         // Allistic curve
         const allisticCurve = gaussianCurve(3.19, .578);
@@ -65,7 +80,8 @@
     
         // Add the y-axis
         svg.append("g")
-        .call(d3.axisLeft(y));
+        .call(d3.axisLeft(y)
+            .ticks(5));
     
         // Create the line generator
         const line = d3.line()
