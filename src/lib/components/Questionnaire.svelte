@@ -9,36 +9,36 @@
         <div class="answers">
             <input type="radio" id="likert-scale-{id}-1" name="answer[{id}]" value="{reversed ? 5 : 1}">
             <label for="likert-scale-{id}-1">
-                <!-- <span class="large-screen">Strongly disagree</span> -->
-                <span>1</span>
+                <span class="small-screen-labels">1</span>
+                <span class="large-screen-labels">Strongly disagree</span>
             </label>
     
             <input type="radio" id="likert-scale-{id}-2" name="answer[{id}]" value="{reversed ? 4 : 2}">
             <label for="likert-scale-{id}-2">
-                <!-- <span class="large-screen">Disagree</span> -->
-                <span>2</span>
+                <span class="small-screen-labels">2</span>
+                <span class="large-screen-labels">Disagree</span>
             </label>
             
             <input type="radio" id="likert-scale-{id}-3" name="answer[{id}]" value="{reversed ? 3 : 3}">
             <label for="likert-scale-{id}-3">
-                <!-- <span class="large-screen">Neither agree nor disagree</span> -->
-                <span>3</span>
+                <span class="small-screen-labels">3</span>
+                <span class="large-screen-labels">Neither agree nor disagree</span>
             </label>
             
             <input type="radio" id="likert-scale-{id}-4" name="answer[{id}]" value="{reversed ? 2 : 4}">
             <label for="likert-scale-{id}-4">
-                <!-- <span class="large-screen">Agree</span> -->
-                <span>4</span>
+                <span class="small-screen-labels">4</span>
+                <span class="large-screen-labels">Agree</span>
             </label>
             
             <input type="radio" id="likert-scale-{id}-5" name="answer[{id}]" value="{reversed ? 1 : 5}">
             <label for="likert-scale-{id}-5">
-                <!-- <span class="large-screen">Strongly agree</span> -->
-                <span>5</span>
+                <span class="small-screen-labels">5</span>
+                <span class="large-screen-labels">Strongly agree</span>
             </label>    
         </div>
 
-        <div class="likert-scale-labels">
+        <div class="likert-scale-labels small-screen-labels">
             <span>Strongly Disagree</span>
             <span>Strongly Agree</span>
         </div>
@@ -62,7 +62,7 @@ form {
     --button-checked-label-color: rgb(255, 255, 255);
 
     /* Add a space between the questions and the top and bottom of the "page" */
-    margin: 20px 0 20px 0;
+    margin: 50px 0;
 }
 
 fieldset {
@@ -71,12 +71,12 @@ fieldset {
     /* Remove the standard padding on the fieldset */
     padding: 0;
     /* Add some space between each question */
-    margin-bottom: 100px; 
+    margin-bottom: 100px;
 }
 
 div.question {
     /* Add a little padding between the question and the sides of the screen */
-    padding: 0 10px 0 10px;
+    padding: 0 var(--left-right-margins);
     /* Center the question */
     text-align: center;
     /* Add a bit of space between the question and the answers */
@@ -100,6 +100,10 @@ label {
     /* Add a bit of padding around the labels. The padding is relative to the
        the font size for the labels. */
     padding: 1em;
+    /* Center the text vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 input {
@@ -130,6 +134,12 @@ div.likert-scale-labels {
     margin-top: 3px;
 }
 
+/* Hide the labels that are used for large screens only */
+.large-screen-labels {
+    visibility: hidden;
+    display: none;
+}
+
 div.submit-button {
     /* Center the submit button horizontally */
     display: flex;
@@ -142,6 +152,35 @@ button {
     padding: 1em 2em;
     font-size: 16px;
     color: var(--button-label-color);
+}
+
+@media only screen and (min-width: 680px) {
+    form {
+        /* Add additional space between the form and the sides of the screen*/
+        margin-left: var(--left-right-margins);
+        margin-right: var(--left-right-margins);
+        /* Make sure that the form doesn't stretch too wide */
+        /* max-width: 900px; */
+    }
+
+    label:hover {
+        /* Add highlighting on hover to let the user know that they can select 
+           the answer */
+        background: #dfdede;
+    }
+
+    /* Hide the labels just for the small screen and display their large screen
+       counterparts */
+    .small-screen-labels {
+        visibility: hidden;
+        display: none;
+    }
+    .large-screen-labels {
+        visibility: visible;
+        display: inline;
+        font-size: 20px;
+    }
+
 }
 
 </style>

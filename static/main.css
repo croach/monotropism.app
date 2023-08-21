@@ -8,4 +8,8 @@
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
+    
+    /* Center all content on the page */
+    display: flex;
+    justify-content: center;
 }
