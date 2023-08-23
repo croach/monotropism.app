@@ -29,8 +29,8 @@
 
     onMount(async () => {
         
-        const defaultWidth = 800;
-        const defaultHeight = 500;
+        const defaultWidth = 700;
+        const defaultHeight = 700;
         const defaultRatio = defaultWidth /  defaultHeight;
 
         const currentWidth = window.innerWidth;
@@ -139,6 +139,14 @@
             .style("stroke-dasharray", "10 4")
             .style("stroke", "#7f7e7e")
             .style("fill", "none");
+
+        // Add a tooltip to the line representing the user's results
+        svg.append("text")
+            .text(`Your score: ${data.avgScore}`)
+            .attr("x", x(data.avgScore) + ((data.avgScore < 3.5) ? 10 : -135))
+            .attr("y", 15)
+            .attr("opacity", 0.7)
+            .style("fill", "#7f7e7e");
     });
 </script>
 
