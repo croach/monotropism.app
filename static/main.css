@@ -5,6 +5,27 @@
     font-weight: 300
 }
 
+:root {
+    --background-color: #ffffff;
+    --text-color: #25292e;
+    --button-color: #eeeded;
+    --button-text-color: #676666;
+    --button-selected-color: #5fc6f5;
+    --button-selected-text-color: #ffffff;
+    --button-hover-color: #d9d9d9;
+}
+
+/* Switch to dark mode if the user's OS supports it */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #25292e;
+        --text-color: #ffffff;
+        --button-color: #dad9d9;
+        --button-selected-color: #bb42a1;
+        --button-hover-color: #b3b2b2;
+    }
+}
+
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
@@ -12,4 +33,6 @@ body {
     /* Center all content on the page */
     display: flex;
     justify-content: center;
+    background: var(--background-color);
+    color: var(--text-color)
 }

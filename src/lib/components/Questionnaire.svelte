@@ -55,12 +55,6 @@
 <style>
 
 form {
-    /* Custom CSS variables */
-    --button-background-color: #eeeded;
-    --button-label-color: rgb(103, 102, 102);
-    --button-checked-background-color: #5fc6f5;
-    --button-checked-label-color: rgb(255, 255, 255);
-
     /* Add a space between the questions and the top and bottom of the "page" */
     margin: 50px 0;
 }
@@ -80,7 +74,7 @@ div.question {
     /* Center the question */
     text-align: center;
     /* Add a bit of space between the question and the answers */
-    margin-bottom: 10px;
+    margin-bottom: 1em;
 }
 
 div.answers {
@@ -93,8 +87,8 @@ div.answers {
 
 label {
     font-size: 12px;
-    color: var(--button-label-color);
-    background: var(--button-background-color);
+    color: var(--button-text-color);
+    background: var(--button-color);
     /* Center the label */
     text-align: center;
     /* Add a bit of padding around the labels. The padding is relative to the
@@ -119,8 +113,8 @@ input {
 
 input:checked + label {
     /* Highlight selected answer by changing the background and text colors */
-    background: var(--button-checked-background-color);
-    color: var(--button-checked-label-color);
+    background: var(--button-selected-color);
+    color: var(--button-selected-text-color);
 }
 
 div.likert-scale-labels {
@@ -147,11 +141,11 @@ div.submit-button {
 }
 
 button {
-    background-color: var(--button-background-color);
+    background-color: var(--button-color);
     border: none;
     padding: 1em 2em;
     font-size: 16px;
-    color: var(--button-label-color);
+    color: var(--button-text-color);
 }
 
 @media only screen and (min-width: 680px) {
@@ -166,7 +160,8 @@ button {
     label:hover {
         /* Add highlighting on hover to let the user know that they can select 
            the answer */
-        background: #dfdede;
+        background: var(--button-hover-color);
+        color: var(--dark-mode-color);
     }
 
     /* Hide the labels just for the small screen and display their large screen

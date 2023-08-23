@@ -71,31 +71,31 @@
             .attr("height", height + margin.top + margin.bottom)
         .append("g")
             .attr("transform", `translate(${margin.left},${margin.top})`);
-    
+
         // Add the x-axis
         svg.append("g")
-        .attr("transform", `translate(0,${height})`)
-        .call(d3.axisBottom(x)
-            .ticks(5));
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(x)
+                .ticks(5));
     
         // Add the y-axis
         svg.append("g")
-        .call(d3.axisLeft(y)
-            .ticks(5));
+            .call(d3.axisLeft(y)
+                .ticks(5));
     
         // Create the line generator
         const line = d3.line()
-        .defined(d => d[0] > 1 && d[0] < 5)
-        .curve(d3.curveNatural)
-        .x(d => x(d[0]))
-        .y(d => y(d[1]));
+            .defined(d => d[0] > 1 && d[0] < 5)
+            .curve(d3.curveNatural)
+            .x(d => x(d[0]))
+            .y(d => y(d[1]));
     
         const area = d3.area()
-        .defined(d => d[0] > 1 && d[0] < 5)
-        .curve(d3.curveNatural)
-        .x(d => x(d[0]))
-        .y0(y(0))
-        .y1(d => y(d[1]));
+            .defined(d => d[0] > 1 && d[0] < 5)
+            .curve(d3.curveNatural)
+            .x(d => x(d[0]))
+            .y0(y(0))
+            .y1(d => y(d[1]));
     
         // Add the line path to the SVG element
         svg.append("path")
@@ -106,27 +106,27 @@
             .attr("d", line);
     
         svg.append("path")
-        .datum(allisticCurve)
-        .attr("fill", "steelblue")
-        .attr("stroke", "steelblue")
-        .attr("stroke-width", 1)
-        .attr("opacity", 0.3)
-        .attr("d", area);
+            .datum(allisticCurve)
+            .attr("fill", "steelblue")
+            .attr("stroke", "steelblue")
+            .attr("stroke-width", 1)
+            .attr("opacity", 0.3)
+            .attr("d", area);
     
         svg.append("path")
-        .datum(autisticCurve)
-        .attr("fill", "none")
-        .attr("stroke", "red")
-        .attr("stroke-width", 1.5)
-        .attr("d", line);
+            .datum(autisticCurve)
+            .attr("fill", "none")
+            .attr("stroke", "red")
+            .attr("stroke-width", 1.5)
+            .attr("d", line);
     
         svg.append("path")
-        .datum(autisticCurve)
-        .attr("fill", "red")
-        .attr("stroke", "red")
-        .attr("stroke-width", 1)
-        .attr("opacity", 0.3)
-        .attr("d", area);
+            .datum(autisticCurve)
+            .attr("fill", "red")
+            .attr("stroke", "red")
+            .attr("stroke-width", 1)
+            .attr("opacity", 0.3)
+            .attr("d", area);
 
         // Add a line representing the user's results
         svg.append("line")
@@ -137,7 +137,7 @@
             .attr("opacity", 0.7)
             .style("stroke-width", 2)
             .style("stroke-dasharray", "10 4")
-            .style("stroke", "black")
+            .style("stroke", "#7f7e7e")
             .style("fill", "none");
     });
 </script>
