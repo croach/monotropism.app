@@ -28,15 +28,16 @@
     }
 
     onMount(async () => {
-        
-        const defaultWidth = 700;
-        const defaultHeight = 700;
+        const defaultWidth = 800;
+        const defaultHeight = 500;
         const defaultRatio = defaultWidth /  defaultHeight;
 
         const currentWidth = window.innerWidth;
         const currentHeight = window.innerHeight;
         const currentRatio = currentWidth / currentHeight;
 
+        // Adjust the dimensions of the chart to fit the screen keeping the same
+        // aspect ratio.
         let h = defaultHeight;
         let w = defaultWidth;
         if (currentRatio <= defaultRatio) {
@@ -56,41 +57,48 @@
         const autisticCurve = gaussianCurve(4.15, .347);
     
         // Set up the x and y scales
-        const x = d3.scaleLinear()
+        const x = d3
+            .scaleLinear()
             .domain([1, 5])
             .range([0, width]);
     
-        const y = d3.scaleLinear()
+        const y = d3
+            .scaleLinear()
             .domain([0, d3.max(autisticCurve, d => d[1])])
             .range([height, 0]);
     
         // Create the SVG element and append it to the chart container
-        const svg = d3.select("#chart-container")
-        .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-            .attr("transform", `translate(${margin.left},${margin.top})`);
+        const svg = d3
+            .select("#chart-container")
+            .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
 
         // Add the x-axis
-        svg.append("g")
+        svg
+            .append("g")
             .attr("transform", `translate(0,${height})`)
             .call(d3.axisBottom(x)
                 .ticks(5));
     
         // Add the y-axis
-        svg.append("g")
+        svg
+            .append("g")
             .call(d3.axisLeft(y)
                 .ticks(5));
     
         // Create the line generator
-        const line = d3.line()
+        const line = d3
+            .line()
             .defined(d => d[0] > 1 && d[0] < 5)
             .curve(d3.curveNatural)
             .x(d => x(d[0]))
             .y(d => y(d[1]));
     
-        const area = d3.area()
+        const area = d3
+            .area()
             .defined(d => d[0] > 1 && d[0] < 5)
             .curve(d3.curveNatural)
             .x(d => x(d[0]))
@@ -98,14 +106,16 @@
             .y1(d => y(d[1]));
     
         // Add the line path to the SVG element
-        svg.append("path")
+        svg
+            .append("path")
             .datum(allisticCurve)
             .attr("fill", "none")
             .attr("stroke", "steelblue")
             .attr("stroke-width", 1.5)
             .attr("d", line);
     
-        svg.append("path")
+        svg
+            .append("path")
             .datum(allisticCurve)
             .attr("fill", "steelblue")
             .attr("stroke", "steelblue")
@@ -113,14 +123,16 @@
             .attr("opacity", 0.3)
             .attr("d", area);
     
-        svg.append("path")
+        svg
+            .append("path")
             .datum(autisticCurve)
             .attr("fill", "none")
             .attr("stroke", "red")
             .attr("stroke-width", 1.5)
             .attr("d", line);
     
-        svg.append("path")
+        svg
+            .append("path")
             .datum(autisticCurve)
             .attr("fill", "red")
             .attr("stroke", "red")
@@ -129,7 +141,8 @@
             .attr("d", area);
 
         // Add a line representing the user's results
-        svg.append("line")
+        svg
+            .append("line")
             .attr("x1", x(data.avgScore))
             .attr("y1", 0)
             .attr("x2", x(data.avgScore))
@@ -141,12 +154,28 @@
             .style("fill", "none");
 
         // Add a tooltip to the line representing the user's results
-        svg.append("text")
-            .text(`Your score: ${data.avgScore}`)
-            .attr("x", x(data.avgScore) + ((data.avgScore < 3.5) ? 10 : -135))
-            .attr("y", 15)
+        const message = `Your score: ${data.avgScore}`;
+        const annotation = svg
+            .append("text")
+            .text(message)
             .attr("opacity", 0.7)
-            .style("fill", "#7f7e7e");
+            .style("fill", "#7f7e7e")
+            // Position the annotation just above the chart so as to not obscure
+            // the message. The chart is translated by the margin amount, so we
+            // can position the annotation above the chart by giving a negative
+            // y-coordinate.
+            .attr("y", -10);
+
+        // Adjust the horizontal position of the tooltip to make sure it doesn't
+        // go outside of the chart's boundaries
+        const annotationLength = Math.ceil(annotation.node().getComputedTextLength());
+        if (Math.ceil(annotationLength / 2) > x(data.avgScore)) {
+            annotation.attr("x", 0);
+        } else if (Math.ceil(annotationLength / 2) > width - x(data.avgScore)) {
+            annotation.attr("x", width - annotationLength);
+        } else {
+            annotation.attr("x", x(data.avgScore) - annotationLength / 2);
+        }
     });
 </script>
 
