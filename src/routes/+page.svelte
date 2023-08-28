@@ -7,8 +7,6 @@
 
   import Questionnaire from '../lib/components/Questionnaire.svelte';
   import Chart from '$lib/components/Chart.svelte';
-
-  console.log(form)
 </script>
 
 <div class="main">

@@ -28,6 +28,12 @@
     }
 
     onMount(async () => {
+        // Check if the user has dark mode enabled and change the color of the
+        // annotation text and line accordingly.
+        const mq = window. matchMedia('(prefers-color-scheme: dark)');
+        const isDarkMode = () => mq.matches;
+        const annotationColor = isDarkMode() ? "white" : "black";
+
         const defaultWidth = 800;
         const defaultHeight = 500;
         const defaultRatio = defaultWidth /  defaultHeight;
@@ -80,7 +86,8 @@
         svg
             .append("g")
             .attr("transform", `translate(0,${height})`)
-            .call(d3.axisBottom(x)
+            .call(d3
+                .axisBottom(x)
                 .ticks(5));
     
         // Add the y-axis
@@ -141,7 +148,7 @@
             .attr("d", area);
 
         // Add a line representing the user's results
-        svg
+        const annotationLine = svg
             .append("line")
             .attr("x1", x(data.avgScore))
             .attr("y1", 0)
@@ -150,7 +157,7 @@
             .attr("opacity", 0.7)
             .style("stroke-width", 2)
             .style("stroke-dasharray", "10 4")
-            .style("stroke", "#7f7e7e")
+            .style("stroke", annotationColor)
             .style("fill", "none");
 
         // Add a tooltip to the line representing the user's results
@@ -159,7 +166,7 @@
             .append("text")
             .text(message)
             .attr("opacity", 0.7)
-            .style("fill", "#7f7e7e")
+            .style("fill", annotationColor)
             // Position the annotation just above the chart so as to not obscure
             // the message. The chart is translated by the margin amount, so we
             // can position the annotation above the chart by giving a negative
@@ -176,6 +183,19 @@
         } else {
             annotation.attr("x", x(data.avgScore) - annotationLength / 2);
         }
+
+        // Add an event listener to the media query to change the color of the
+        // annotation text and line when the user changes their color scheme.
+        mq.addEventListener('change', (e) => {
+            if (e.matches) {
+                annotation.style("fill", "white");
+                annotationLine.style("stroke", "white");
+            } else {
+                annotation.style("fill", "black");      
+                annotationLine.style("stroke", "black");      
+            }
+        });
+
     });
 </script>
 
