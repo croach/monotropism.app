@@ -10,7 +10,6 @@
 </script>
 
 <div class="main">
-  
   <h1>Monotropism Questionnaire</h1>
   
   {#if !form}
@@ -39,9 +38,16 @@
       There's not much too it really, just read each question and answer according to your own lived experience. If you run across a question that simply does not make sense to you, skip it and it won't be taken into account when calculating your score. Once you've answered all of the questions, click the submit button and you'll be taken to a page that shows your score and how it compares to those for autistic and non-autistic people.
     </p>
 
-
     <Questionnaire questions={data.questions} />
   {:else}
+    <p>
+      Please remember that this questionnaire is not a test for autism; it is a self-report measure of <a href="https://monotropism.org">monotropism</a>. Your score does not necessarily reflect whether or not you are autistic. If you score high for monotropism, you may want to do further research. A big thank you to the full team responsible for creating the questionnaire: Valeria Garau, Richard Woods, Nick Chown, Sonny Hallett, Fergus Murray, Rebecca Wood, Aja Louise Murray, Sue Fletcher-Watson. If you are interested in the research behind the questionnaire, I encourage you to read over the <a href="https://osf.io/wpx5g/">paper</a> (this is a pre-print currently awaiting peer review).
+    </p>
+
+    <h2>What does my score mean?</h2>
+    <p>
+      Your score is a measure of how monotropic you lean. The higher the score, the more monotropic. The curves in the graph below represent the distribution of scores for autistic and non-autistic people. The vertical line represents your average score. The mean score for non-autistic people is {form.allisticStats.mu} with a standard deviation of {form.allisticStats.sd}. The mean score for autistic people is {form.autisticStats.mu} with a standard deviation of {form.autisticStats.sd}.
+    </p>
     <Chart data={form} />
   {/if}
 </div>

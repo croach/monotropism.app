@@ -11,9 +11,11 @@
     --link-color: #F57888;
     --button-color: #eeeded;
     --button-text-color: #676666;
+    --button-hover-color: #d4d4d4;
     --button-selected-color: #5fc6f5;
     --button-selected-text-color: #ffffff;
-    --button-hover-color: #d4d4d4;
+    --autistic-color: #F57888;
+    --allistic-color: #5fc6f5;
 }
 
 /* Switch to dark mode if the user's OS supports it */
@@ -21,10 +23,9 @@
     :root {
         --background-color: #25292e;
         --text-color: #ffffff;
-        --link-color: #F57888;
         --button-color: #dad9d9;
-        --button-selected-color: #3182A8;
         --button-hover-color: #b3b2b2;
+        --button-selected-color: #3182A8;
     }
 }
 

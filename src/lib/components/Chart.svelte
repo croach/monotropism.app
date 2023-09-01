@@ -32,7 +32,13 @@
         // annotation text and line accordingly.
         const mq = window. matchMedia('(prefers-color-scheme: dark)');
         const isDarkMode = () => mq.matches;
-        const annotationColor = isDarkMode() ? "white" : "black";
+        const darkModeAnnotationColor = "#ffffff";
+        const lightModeAnnotationColor = "#25292e";
+        const annotationColor = isDarkMode() ? darkModeAnnotationColor : lightModeAnnotationColor;
+
+        // Get the autistic and non-autistic (allistic) css variables
+        const autisticColor = getComputedStyle(document.documentElement).getPropertyValue('--autistic-color');
+        const allisticColor = getComputedStyle(document.documentElement).getPropertyValue('--allistic-color');
 
         const defaultWidth = 800;
         const defaultHeight = 500;
@@ -117,15 +123,15 @@
             .append("path")
             .datum(allisticCurve)
             .attr("fill", "none")
-            .attr("stroke", "steelblue")
+            .attr("stroke", allisticColor)
             .attr("stroke-width", 1.5)
             .attr("d", line);
     
         svg
             .append("path")
             .datum(allisticCurve)
-            .attr("fill", "steelblue")
-            .attr("stroke", "steelblue")
+            .attr("fill", allisticColor)
+            .attr("stroke", allisticColor)
             .attr("stroke-width", 1)
             .attr("opacity", 0.3)
             .attr("d", area);
@@ -134,15 +140,15 @@
             .append("path")
             .datum(autisticCurve)
             .attr("fill", "none")
-            .attr("stroke", "red")
+            .attr("stroke", autisticColor)
             .attr("stroke-width", 1.5)
             .attr("d", line);
     
         svg
             .append("path")
             .datum(autisticCurve)
-            .attr("fill", "red")
-            .attr("stroke", "red")
+            .attr("fill", autisticColor)
+            .attr("stroke", autisticColor)
             .attr("stroke-width", 1)
             .attr("opacity", 0.3)
             .attr("d", area);
@@ -188,11 +194,11 @@
         // annotation text and line when the user changes their color scheme.
         mq.addEventListener('change', (e) => {
             if (e.matches) {
-                annotation.style("fill", "white");
-                annotationLine.style("stroke", "white");
+                annotation.style("fill", darkModeAnnotationColor);
+                annotationLine.style("stroke", darkModeAnnotationColor);
             } else {
-                annotation.style("fill", "black");      
-                annotationLine.style("stroke", "black");      
+                annotation.style("fill", lightModeAnnotationColor);      
+                annotationLine.style("stroke", lightModeAnnotationColor);      
             }
         });
 

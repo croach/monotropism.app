@@ -86,7 +86,6 @@ div.answers {
 }
 
 label {
-    font-size: 12px;
     color: var(--button-text-color);
     background: var(--button-color);
     /* Center the label */
@@ -98,6 +97,12 @@ label {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+label span {
+    /* Resize the button labels for smaller screens */
+    font-size: 0.8em;
+    font-weight: 500;
 }
 
 input {
@@ -118,7 +123,7 @@ input:checked + label {
 }
 
 div.likert-scale-labels {
-    font-size: 12px;
+    font-size: 0.6em;
     /* Push the labels to opposite ends of the scale */
     display: flex;
     justify-content: space-between;
@@ -144,7 +149,8 @@ button {
     background-color: var(--button-color);
     border: none;
     padding: 1em 2em;
-    font-size: 16px;
+    font-size: 0.8em;
+    font-weight: 500;
     color: var(--button-text-color);
 }
 
@@ -174,6 +180,11 @@ button {
         visibility: visible;
         display: inline;
         font-size: 20px;
+        font-weight: 300;
+    }
+
+    button {
+        font-weight: 300;
     }
 
 }
