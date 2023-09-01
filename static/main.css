@@ -8,11 +8,12 @@
 :root {
     --background-color: #ffffff;
     --text-color: #25292e;
+    --link-color: #F57888;
     --button-color: #eeeded;
     --button-text-color: #676666;
     --button-selected-color: #5fc6f5;
     --button-selected-text-color: #ffffff;
-    --button-hover-color: #d9d9d9;
+    --button-hover-color: #d4d4d4;
 }
 
 /* Switch to dark mode if the user's OS supports it */
@@ -20,8 +21,9 @@
     :root {
         --background-color: #25292e;
         --text-color: #ffffff;
+        --link-color: #F57888;
         --button-color: #dad9d9;
-        --button-selected-color: #bb42a1;
+        --button-selected-color: #3182A8;
         --button-hover-color: #b3b2b2;
     }
 }
@@ -35,4 +37,8 @@ body {
     justify-content: center;
     background: var(--background-color);
     color: var(--text-color)
+}
+
+a:link, a:visited {
+    color: var(--link-color);
 }

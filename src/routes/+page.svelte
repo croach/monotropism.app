@@ -13,17 +13,33 @@
   
   <h1>Monotropism Questionnaire</h1>
   
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pellentesque dignissim enim sit amet venenatis urna. Nunc sed velit dignissim sodales ut eu sem integer vitae. Consectetur libero id faucibus nisl. At auctor urna nunc id cursus metus aliquam eleifend mi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. Lorem mollis aliquam ut porttitor leo a. Lectus nulla at volutpat diam ut. Venenatis cras sed felis eget velit aliquet sagittis. A erat nam at lectus urna duis convallis. Urna condimentum mattis pellentesque id nibh tortor id aliquet. Lorem sed risus ultricies tristique nulla aliquet enim tortor. Blandit volutpat maecenas volutpat blandit aliquam. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Rhoncus est pellentesque elit ullamcorper. Eget mauris pharetra et ultrices neque ornare aenean euismod. Metus aliquam eleifend mi in nulla. Duis ultricies lacus sed turpis tincidunt id.</p>
-
-  <p>Velit egestas dui id ornare. Vulputate dignissim suspendisse in est ante in nibh. Augue mauris augue neque gravida in fermentum. Sit amet venenatis urna cursus eget nunc. Cursus metus aliquam eleifend mi in nulla posuere. Morbi tristique senectus et netus et malesuada fames. Enim lobortis scelerisque fermentum dui faucibus. Urna neque viverra justo nec ultrices dui sapien eget mi. Amet luctus venenatis lectus magna fringilla. Ultricies mi eget mauris pharetra et ultrices neque ornare aenean. Vitae ultricies leo integer malesuada nunc vel risus. Nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. Senectus et netus et malesuada fames ac turpis. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Urna neque viverra justo nec ultrices dui sapien eget.</p>
-
-  <p>Porttitor leo a diam sollicitudin. Iaculis urna id volutpat lacus laoreet non. Ultrices eros in cursus turpis massa tincidunt dui. Eu sem integer vitae justo eget. Malesuada bibendum arcu vitae elementum curabitur. Duis ut diam quam nulla porttitor massa id neque aliquam. Senectus et netus et malesuada fames. Vestibulum lorem sed risus ultricies tristique nulla aliquet. Mauris commodo quis imperdiet massa. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. Bibendum est ultricies integer quis auctor elit sed vulputate. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Molestie a iaculis at erat.</p>
-
-  <p>At volutpat diam ut venenatis tellus in metus. Ipsum dolor sit amet consectetur adipiscing. Amet massa vitae tortor condimentum lacinia quis. Enim nunc faucibus a pellentesque sit amet porttitor. Nibh ipsum consequat nisl vel pretium lectus. Convallis convallis tellus id interdum velit. Et tortor consequat id porta nibh venenatis cras sed felis. Massa placerat duis ultricies lacus sed turpis. Facilisis volutpat est velit egestas dui. Dapibus ultrices in iaculis nunc sed. Orci nulla pellentesque dignissim enim sit amet venenatis. Sit amet purus gravida quis blandit turpis cursus. Natoque penatibus et magnis dis parturient. Erat velit scelerisque in dictum non consectetur a. Aliquam vestibulum morbi blandit cursus. Suspendisse sed nisi lacus sed viverra tellus in hac. Commodo odio aenean sed adipiscing diam. Bibendum enim facilisis gravida neque. Mi bibendum neque egestas congue quisque.</p>
-
-  <p>Nunc non blandit massa enim nec dui nunc. Sagittis aliquam malesuada bibendum arcu. Nec tincidunt praesent semper feugiat nibh. Purus semper eget duis at tellus at urna. In fermentum et sollicitudin ac orci phasellus egestas tellus. Enim blandit volutpat maecenas volutpat blandit. Faucibus in ornare quam viverra. Fames ac turpis egestas integer eget aliquet. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Pharetra et ultrices neque ornare aenean euismod. Sem fringilla ut morbi tincidunt augue interdum velit euismod. Fusce ut placerat orci nulla pellentesque. Eu mi bibendum neque egestas congue quisque egestas. Orci phasellus egestas tellus rutrum tellus pellentesque. Facilisis volutpat est velit egestas dui id. Venenatis a condimentum vitae sapien pellentesque habitant. Amet massa vitae tortor condimentum lacinia quis vel eros. Velit ut tortor pretium viverra suspendisse potenti nullam ac tortor.</p>
-
   {#if !form}
+    <p>
+
+      Monotropism is a theory of autism that was developed by Drs. Dinah Murray, Wenn Lawson, and Mike Lesser. It is based on the idea that at any one point in time an individual has a finite amount of attention and that the strategies for how this scarce resource is allocated is different for autistic versus non-autistic people. Autistic people tend to have their full attention pulled strongly toward a small number of interests (monotropism) leaving little attention for anything else, while non-autistic people tend to have a wider range of less highly aroused interests (polytropism) allowing them to spread their attention across multiple interests at a time. In <a href="https://monotropism.org/murray-lesser-lawson/">"Attention, monotropism and the diagnostic criteria for autism"</a> Murray et al. argue that monotropism can be used to explain nearly all of the characteristics that are commonly associated with autism.
+    </p>
+
+    <h2>What is the Monotropism Questionnaire?</h2>
+    <p>
+      The Monotropism Questionnaire was developed by a group of autistic adults based on their lived experience and academic expertise and is a collection of 47 questions with the goal of being used as self-report measure of monotropism in both autistic and non-autistic people. The questionnaire itself is published under a Creative Commons license, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC-BY-NC-ND - Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. 
+    </p>
+
+    <h2>Why did I create this website?</h2>
+    <p>
+      Nearly two years ago my oldest child was diagnosed with autism and ADHD. Naturally, my wife and I wanted to learn as much as as we could about both topics and so we read and/or listened to just about anything we could find on the subjects. A few months ago my wife sent me an interesting <a href="https://www.tiktok.com/@nd_psych/video/7256607960254713106">TikTok video</a> from Dr. Joey Lawrence that she came across in her own independent research. The video piqued my interest and so I followed the link to the questionnaire and read through a few of the questions. What I found was that they were actually quite relevant to my day-to-day experiences, and so I began to wonder if I could be autistic as well. I read through the remaining questions and answered each one, tallied up my score, and found that I scored above the mean for autistic people (4.38 to be exact). After that, I began to wonder how some of my friends and family would score. My answers to the questions seemed so obvious to me that I was confident everyone else I knew would score similarly even though I was pretty sure that they were not autistic. So, I had a couple of close family members take the test and I was shocked by how different their scores were from mine. This piqued my interest even more and I wanted to send this out to all of my friends, family, colleagues, etc. to see how they all would score. I knew I couldn't send out the PDF to everyone, not only would it be too much to ask of some of my acquaintances, but it would also be intractable for me to collect and analyze all of the data. So, I decided to create this website.  
+    </p>
+
+    <h2>How secure is this Questionnaire?</h2>
+    <p>
+      I am by no means an expert web developer. I am a machine learning engineer with a background in traditional software engineering and some experience creating web applications, but typically only for internal use, so I don't claim to be an expert in web security. That said, I do take some simple precautions like making sure that communication with the website goes through a properly encrypted connection so none of your data can be captured by a man-in-the-middle attack. In addition, I currently do not store any of your submitted data. The answers that you submit are only used to calculate your score and nothing more. I do not make any money from hosting this website, it is strictly a passion project for me and I have no intention of ever using this website for monetary gain (nor could I, since the questionnaire's license makes it available for non-commercial purposes only). Additionally, I have open sourced the code for this website and you can find it <a href="https://github.com/croach/monotropism.app">here</a>. If you have any questions or concerns, please feel free to reach out to me at <a href="mailto:christopher.g.roach@gmail.com">christopher.g.roach@gmail.com</a>.
+    </p>
+
+    <h2>Instructions</h2>
+    <p>
+      There's not much too it really, just read each question and answer according to your own lived experience. If you run across a question that simply does not make sense to you, skip it and it won't be taken into account when calculating your score. Once you've answered all of the questions, click the submit button and you'll be taken to a page that shows your score and how it compares to those for autistic and non-autistic people.
+    </p>
+
+
     <Questionnaire questions={data.questions} />
   {:else}
     <Chart data={form} />
@@ -38,9 +54,14 @@
     max-width: 900px;
   }
 
-  h1 {
+  h1, h2 {
     /* Add some space around the title  */
     margin: 1rem var(--left-right-margins);
+  }
+
+  h2 {
+    font-size: 1em;
+    font-weight: bold;
   }
 
   p {
