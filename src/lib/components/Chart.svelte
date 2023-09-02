@@ -46,15 +46,21 @@
 
         const currentWidth = window.innerWidth;
         const currentHeight = window.innerHeight;
-        const currentRatio = currentWidth / currentHeight;
+        // let currentRatio = currentWidth / currentHeight;
 
-        // Adjust the dimensions of the chart to fit the screen keeping the same
-        // aspect ratio.
+        // Adjust the dimensions of the chart to fit the screen while keeping 
+        // the same aspect ratio.
         let h = defaultHeight;
         let w = defaultWidth;
-        if (currentRatio <= defaultRatio) {
+        // Make the chart's width stays within the boundaries of the screen
+        if (currentWidth < w) {
             w = currentWidth;
             h = w / defaultRatio;
+        }
+        // Make the chart's height stays within the boundaries of the screen
+        if (currentHeight < h) {
+            h = currentHeight;
+            w = h * defaultRatio;
         }
         
         // Set dimensions and margins for the chart
