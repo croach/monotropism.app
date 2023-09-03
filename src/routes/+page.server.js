@@ -1,5 +1,6 @@
 import { shuffle } from '$lib/utils.js'
 import questions from '$lib/data/questions.json'
+import { pb } from '$lib/pocketbase.js'
 
 /** @type {import('./$types').PageLoad} */
 export function load({ params }) {
