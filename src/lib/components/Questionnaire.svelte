@@ -1,5 +1,7 @@
 <script>
     export let questions;
+
+    let dialog;
 </script>
   
 <form class="questionnaire" name="questionnaire" method="POST">
@@ -46,8 +48,20 @@
     </fieldset>
     {/each}
 
+    <!-- Add a dialog box with a checkbox asking the user if they want to save their data -->
+    <dialog id="save-data-dialog" bind:this={dialog}>
+        <h2>Save Data?</h2>
+        <p>
+            Do you want to save your answers so you can come back later and view your results?
+        </p>
+        <div class="submit-button">
+            <button type="submit" name="save-data" value="true">Yes</button>
+            <button type="submit" name="save-data" value="false">No</button>
+        </div>
+    </dialog>
+
     <div class="submit-button">
-        <button>Submit</button>
+        <button on:click={() => dialog.showModal()} type="button">Submit</button>
     </div>
 
 </form>
@@ -152,6 +166,16 @@ button {
     font-size: 0.8em;
     font-weight: 500;
     color: var(--button-text-color);
+    /* show a hand cursor when hovering over the button */
+    cursor: pointer;
+}
+
+dialog {
+    /* Translate the coordinate system to the center of the dialog box */
+    transform: translate(-50%, -50%);
+    /* Center the dialog vertically and horizontally */
+    top: 50%;
+    left: 50%;
 }
 
 @media only screen and (min-width: 680px) {

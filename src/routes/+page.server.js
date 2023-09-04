@@ -14,7 +14,8 @@ export function load({ params }) {
 /** @type {import('./$types').Actions} */
 export const actions = {
     default: async (event) => {
-        const questions = Array.from((await event.request.formData()).entries())
+        const formData = await event.request.formData()
+        const questions = Array.from(formData.entries())
         const data = {
             submission: JSON.stringify(questions.reduce( (obj, [num, val]) => (obj[num.slice(7, -1)] = parseInt(val), obj), {}))
         }
