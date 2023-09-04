@@ -12,8 +12,10 @@
     --button-color: #eeeded;
     --button-text-color: #676666;
     --button-hover-color: #d4d4d4;
+    --button-hover-text-color: #676666;
     --button-selected-color: #5fc6f5;
     --button-selected-text-color: #ffffff;
+    --button-focus-outline-color: #25292e;
     --autistic-color: #F57888;
     --allistic-color: #5fc6f5;
 }
@@ -25,6 +27,7 @@
         --text-color: #ffffff;
         --button-color: #dad9d9;
         --button-hover-color: #b3b2b2;
+        --button-hover-text-color: #ffffff;
         --button-selected-color: #3182A8;
     }
 }

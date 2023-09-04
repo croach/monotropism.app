@@ -52,7 +52,7 @@
     <dialog id="save-data-dialog" bind:this={dialog}>
         <h2>Save Data?</h2>
         <p>
-            Do you want to save your answers so you can come back later and view your results?
+            Do you want to save your answers so you can come back later and view your results? All data saved will be completely anonymous and will not be shared with anyone.
         </p>
         <div class="submit-button">
             <button type="submit" name="save-data" value="true">Yes</button>
@@ -168,14 +168,33 @@ button {
     color: var(--button-text-color);
     /* show a hand cursor when hovering over the button */
     cursor: pointer;
+
+    margin: 0 0.3em;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+    color: var(--button-hover-text-color);
+}
+
+button:focus {
+    outline: 1px solid var(--button-focus-outline-color);
 }
 
 dialog {
+    /* Pop the dialog box out of the page so we can position it relative to the viewport */
+    position: fixed;
     /* Translate the coordinate system to the center of the dialog box */
     transform: translate(-50%, -50%);
     /* Center the dialog vertically and horizontally */
     top: 50%;
     left: 50%;
+}
+
+dialog::backdrop {
+    /* background: linear-gradient(45deg, #F57888, #5fc6f5); */
+    background: #25292e;
+    opacity: 0.7;
 }
 
 @media only screen and (min-width: 680px) {
@@ -191,7 +210,7 @@ dialog {
         /* Add highlighting on hover to let the user know that they can select 
            the answer */
         background: var(--button-hover-color);
-        color: var(--dark-mode-color);
+        color: var(--button-hover-text-color);
     }
 
     /* Hide the labels just for the small screen and display their large screen

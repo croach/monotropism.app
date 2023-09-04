@@ -15,12 +15,13 @@ export function load({ params }) {
 export const actions = {
     default: async (event) => {
         const formData = await event.request.formData()
+        console.log(formData)
         const questions = Array.from(formData.entries())
         const data = {
             submission: JSON.stringify(questions.reduce( (obj, [num, val]) => (obj[num.slice(7, -1)] = parseInt(val), obj), {}))
         }
-        const submission = await pb.collection('submissions').create(data)
 
+        const submission = await pb.collection('submissions').create(data)
         throw redirect(302, `${submission.id}`)
     }
 };

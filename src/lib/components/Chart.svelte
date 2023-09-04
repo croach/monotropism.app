@@ -130,15 +130,13 @@
             .datum(allisticCurve)
             .attr("fill", "none")
             .attr("stroke", allisticColor)
-            .attr("stroke-width", 1.5)
+            .attr("stroke-width", 3)
             .attr("d", line);
     
         svg
             .append("path")
             .datum(allisticCurve)
             .attr("fill", allisticColor)
-            .attr("stroke", allisticColor)
-            .attr("stroke-width", 1)
             .attr("opacity", 0.3)
             .attr("d", area);
     
@@ -147,7 +145,7 @@
             .datum(autisticCurve)
             .attr("fill", "none")
             .attr("stroke", autisticColor)
-            .attr("stroke-width", 1.5)
+            .attr("stroke-width", 3)
             .attr("d", line);
     
         svg
@@ -166,18 +164,15 @@
             .attr("y1", 0)
             .attr("x2", x(data.avgScore))
             .attr("y2", height)
-            .attr("opacity", 0.7)
-            .style("stroke-width", 2)
+            .style("stroke-width", 1)
             .style("stroke-dasharray", "10 4")
-            .style("stroke", annotationColor)
-            .style("fill", "none");
+            .style("stroke", annotationColor);
 
         // Add a tooltip to the line representing the user's results
         const message = `Your score: ${data.avgScore}`;
         const annotation = svg
             .append("text")
             .text(message)
-            .attr("opacity", 0.7)
             .style("fill", annotationColor)
             // Position the annotation just above the chart so as to not obscure
             // the message. The chart is translated by the margin amount, so we
