@@ -1,31 +1,9 @@
 <script>
     import * as d3 from 'd3';
     import { onMount } from 'svelte';
+    import { gaussianCurve } from '$lib/utils.js';
 
     export let data;
-
-    // Helper functions
-    function arange(start, end, step) {
-        let arr = [];
-        let curr = start;
-        while (curr <= end) {
-            arr.push(curr);
-            curr += step;
-        }
-        return arr;
-    }
-
-    function gaussianPdf(x, mu, sd) {
-        const a = 1 / (sd * Math.sqrt(2 * Math.PI));
-        const b = Math.exp(-0.5 * ((x - mu)/sd)**2);
-        return a * b;
-    }
-
-    function gaussianCurve(mu, sd) {
-        let x = arange(mu - sd * 3, mu + sd * 3, 0.001);
-        let y = x.map((x) => gaussianPdf(x, mu, sd));
-        return x.map((e, i) => [e, y[i]]);
-    }
 
     onMount(async () => {
         // Check if the user has dark mode enabled and change the color of the
@@ -205,5 +183,16 @@
 
     });
 </script>
+
+<h1>Monotropism Questionnaire</h1>
+
+<p>
+  Please remember that this questionnaire is not a test for autism; it is a self-report measure of <a href="https://monotropism.org">monotropism</a>. Your score does not necessarily reflect whether or not you are autistic. If you score high for monotropism, you may want to do further research. A big thank you to the full team responsible for creating the questionnaire: Valeria Garau, Richard Woods, Nick Chown, Sonny Hallett, Fergus Murray, Rebecca Wood, Aja Louise Murray, Sue Fletcher-Watson. If you are interested in the research behind the questionnaire, I encourage you to read over the <a href="https://osf.io/wpx5g/">paper</a> (this is a pre-print currently awaiting peer review).
+</p>
+
+<h2>What does my score mean?</h2>
+<p>
+  Your score is a measure of how monotropic you lean. The higher the score, the more monotropic. The curves in the graph below represent the distribution of scores for autistic and non-autistic people. The vertical line represents your average score. The mean score for non-autistic people is {data.allisticStats.mu} with a standard deviation of {data.allisticStats.sd}. The mean score for autistic people is {data.autisticStats.mu} with a standard deviation of {data.autisticStats.sd}.
+</p>
 
 <div id="chart-container"></div>
