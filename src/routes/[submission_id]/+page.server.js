@@ -10,6 +10,7 @@ export async function load({ params }) {
     return {
         ...stats,
         monotropismScore: `${monotropismScore}/${maxMonotropismScore}`,
-        avgScore: avgMonotropismScore.toFixed(2)
+        avgScore: avgMonotropismScore.toFixed(2),
+        id: submissionId
     }
 }
