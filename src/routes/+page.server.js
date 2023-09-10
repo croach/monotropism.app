@@ -16,6 +16,7 @@ export function load({ params }) {
 export const actions = {
     default: async (event) => {
         const formData = await event.request.formData()
+        console.log(formData)
         
         // Get whether or not the user chose to save the data, then remove the save-data field from the form data so we
         // don't include it when calculating the score

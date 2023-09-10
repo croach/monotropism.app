@@ -1,4 +1,6 @@
 <script>
+    import Demographics from "./Demographics.svelte";
+
     export let questions;
 
     let dialog;
@@ -83,7 +85,11 @@
         <p>
             Do you want to save your answers so you can come back later and view your results? All data saved will be completely anonymous and will not be shared with anyone.
         </p>
+
+        <Demographics id="demographics-form" style="display: none" />
+
         <div class="submit-button">
+            <button type="button" name="reveal-form" on:click={() => document.getElementById('demographics-form').style.display = 'block'}>Reveal</button>
             <button type="submit" name="save-data" value="true">Yes</button>
             <button type="submit" name="save-data" value="false">No</button>
         </div>
