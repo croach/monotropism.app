@@ -98,8 +98,8 @@
 <style>
 
 form {
-    /* Add a space between the questions and the top and bottom of the "page" */
-    margin: 50px 0;
+    /* Add some space between the form and the sides of the screen */
+    margin: 50px var(--left-right-margins);
 }
 
 fieldset {
@@ -227,14 +227,6 @@ dialog::backdrop {
 }
 
 @media only screen and (min-width: 680px) {
-    form {
-        /* Add additional space between the form and the sides of the screen*/
-        margin-left: var(--left-right-margins);
-        margin-right: var(--left-right-margins);
-        /* Make sure that the form doesn't stretch too wide */
-        /* max-width: 900px; */
-    }
-
     label:hover {
         /* Add highlighting on hover to let the user know that they can select 
            the answer */
