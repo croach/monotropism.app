@@ -33,7 +33,7 @@
   If you have further questions or concerns, I have open sourced the code for this website, which you can find <a href="https://github.com/croach/monotropism.app">here</a>, and please feel free to reach out to me at <a href="mailto:christopher.g.roach@gmail.com">christopher.g.roach@gmail.com</a>.
 </p>
   
-<form class="questionnaire" name="questionnaire" method="POST">
+<form class="questionnaire" name="questionnaire" autocomplete="off" method="POST">
     {#each questions as { id, text, reversed }}
     <fieldset>
         <div class="question">{text}</div>
