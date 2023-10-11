@@ -12,7 +12,7 @@
 
     <div class="question">What is your age in years?</div>
     <div class="answers">
-        <input type="text" name="age">
+        <input type="tel" name="age" pattern="[0-9]*">
     </div>
 
     <div class="question">What is your ethnic group?</div>
@@ -64,3 +64,16 @@
     </div>
 
 </fieldset>
+
+
+<style>
+
+fieldset {
+    /* Remove the standard border on the fieldset */
+    border: 0;
+    /* Remove the standard padding on the fieldset */
+    padding: 0;
+    margin: var(--left-right-margins);
+    margin-bottom: 30px;
+}
+</style>
