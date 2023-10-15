@@ -1,10 +1,10 @@
 <script>
-    import demographics from '$lib/data/demographics.json'
+    import questionnaire from '$lib/data/questionnaire.json'
     import Select from './Select.svelte';
     import TextBox from './TextBox.svelte';
 
     // Get the most recent version of the demographics survey
-    const demographicsSurvey = demographics[0];
+    const demographicsSurvey = questionnaire.demographicsSurvey[0];
 </script>
 
 <fieldset {...$$restProps}>
@@ -15,12 +15,9 @@
             <TextBox {question} />
         {/if}
     {/each}
-
 </fieldset>
 
-
 <style>
-
 fieldset {
     /* Remove the standard border on the fieldset */
     border: 0;

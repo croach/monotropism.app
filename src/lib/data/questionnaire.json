@@ -1,0 +1,127 @@
+{
+    "questions": [
+        {"id": 1, "text": "After a period of instability, I need a quiet and predictable environment.", "reversed": 0},
+        {"id": 2, "text": "I need a quiet and predictable environment for me to switch from one task to another easily.", "reversed": 0},
+        {"id": 3, "text": "I often struggle to concentrate in busy and/or unpredictable environments.", "reversed": 0},
+        {"id": 4, "text": "I find sudden unexpected disruptions to my attention startling.", "reversed": 0},
+        {"id": 5, "text": "It's distressing to be unexpectedly pulled away from something I'm engaged in.", "reversed": 0},
+        {"id": 6, "text": "I rarely find simultaneously holding eye contact and making a verbal conversation with another person uncomfortable.", "reversed": 1},
+        {"id": 7, "text": "I often notice details that others do not.", "reversed": 0},
+        {"id": 8, "text": "Involvement in an activity of interest often reduces my anxiety level.", "reversed": 0},
+        {"id": 9, "text": "I find social interactions more comfortable if communicating about a topic of interest to me.", "reversed": 0},
+        {"id": 10, "text": "I am often totally focused on activities I am passionate about, to the point I am unaware of other events.", "reversed": 0},
+        {"id": 11, "text": "I can get quite good at something even if I'm not especially interested in it.", "reversed": 1},
+        {"id": 12, "text": "I often lose sense of time when engaging in activities I am passionate about.", "reversed": 0},
+        {"id": 13, "text": "I sometimes avoid talking because I cannot reliably predict how others will react, especially strangers.", "reversed": 0},
+        {"id": 14, "text": "I tend to do activities because I find them interesting, instead of due to societal expectations.", "reversed": 0},
+        {"id": 15, "text": "I rarely find social situations chaotic.", "reversed": 1},
+        {"id": 16, "text": "I don't mind if someone interrupts me when I'm in the middle of an activity.", "reversed": 1},
+        {"id": 17, "text": "When I'm working on something, I'm open to helpful suggestions", "reversed": 1},
+        {"id": 18, "text": "I often find it difficult to switch topics after engaging in an activity for a long time.", "reversed": 0},
+        {"id": 19, "text": "I often engage in activities I am passionate about to escape from anxiety.", "reversed": 0},
+        {"id": 20, "text": "Routines provide an important source of stability and safety.", "reversed": 0},
+        {"id": 21, "text": "I manage uncertainty by creating routines.", "reversed": 0},
+        {"id": 22, "text": "I often experience anxiety over matters I have little certainty over.", "reversed": 0},
+        {"id": 23, "text": "I find it difficult to engage in a task of no interest to me even if it is important.", "reversed": 0},
+        {"id": 24, "text": "I often find engaging in stimming (e.g.,fidgeting, rocking) to be relaxing.", "reversed": 0},
+        {"id": 25, "text": "I am usually passionate about a few topics at any one time in my life.", "reversed": 0},
+        {"id": 26, "text": "I have trouble filtering out sounds when I am not doing something I'm focused on.", "reversed": 0},
+        {"id": 27, "text": "I usually mean what I say and no more than that.", "reversed": 0},
+        {"id": 28, "text": "I often engage in lengthy discussions on topics I find interesting even though my conversational partner(s) do not.", "reversed": 0},
+        {"id": 29, "text": "I sometimes accidentally say something others find offensive/rude when I am focused on a task.", "reversed": 0},
+        {"id": 30, "text": "I can sometimes be very distressed by a topic that others think of as trivial.", "reversed": 0},
+        {"id": 31, "text": "I find it easy to keep up with group discussions where everyone is speaking", "reversed": 1},
+        {"id": 32, "text": "Often when I am focused on activities, I do not notice I am thirsty or hungry.", "reversed": 0},
+        {"id": 33, "text": "Often when I am focused on activities, I do not notice I need the bathroom.", "reversed": 0},
+        {"id": 34, "text": "When there is a lot of information to consider, I often struggle to make a decision.", "reversed": 0},
+        {"id": 35, "text": "Sometimes making a decision is so hard I get physically stuck.", "reversed": 0},
+        {"id": 36, "text": "I sometimes focus on an incident for a substantial time (days) after the event.", "reversed": 0},
+        {"id": 37, "text": "I sometimes become highly anxious by focusing on the many possible situations that might occur at a future event.", "reversed": 0},
+        {"id": 38, "text": "Sometimes when I am focused on an activity, I do not recall all the information I might need to make good decisions.", "reversed": 0},
+        {"id": 39, "text": "People tell me I get fixated on things.", "reversed": 0},
+        {"id": 40, "text": "I find a problem I can't solve distressing and/or hard to put down.", "reversed": 0},
+        {"id": 41, "text": "I tend to feel quite self-conscious unless I'm deeply absorbed in a task.", "reversed": 0},
+        {"id": 42, "text": "I often get stuck thinking about all the possibilities that might come out of a decision.", "reversed": 0},
+        {"id": 43, "text": "When I am interested in something, I tend to be passionate about it.", "reversed": 0},
+        {"id": 44, "text": "When I am interested in a topic, I like to learn everything I can about that topic.", "reversed": 0},
+        {"id": 45, "text": "I am still fascinated by many of the things I was interested in when I was much younger.", "reversed": 0},
+        {"id": 46, "text": "I rarely find myself getting stuck in loops of thought.", "reversed": 1},
+        {"id": 47, "text": "I often loop back to previous thoughts.", "reversed": 0}
+    ],
+    "demographicsSurvey": [
+        {
+            "version": "1.0.0",
+            "questions": [
+                {
+                    "name": "gender",
+                    "display": "What is your gender?",
+                    "type": "select",
+                    "options": [
+                        {"display": "Male", "value": "1"},
+                        {"display": "Female", "value": "2"},
+                        {"display": "Non-binary / third gender", "value": "3"},
+                        {"display": "Prefer not to say", "value": "4"}
+                    ]
+                },
+                { 
+                    "name": "age", 
+                    "display": "What is your age in years?", 
+                    "type": 
+                    "numeric" 
+                },
+                {
+                    "name": "ethnicity",
+                    "display": "What is your ethnic group?", 
+                    "type": "select",
+                    "options": [
+                        {"display": "White / Caucasian", "value": "1"},
+                        {"display": "Black or African American", "value": "2"},
+                        {"display": "Asian / Pacific Islander", "value": "3"},
+                        {"display": "Native American or Alaskan Native", "value": "4"},
+                        {"display": "Hispanic", "value": "5"},
+                        {"display": "Multiple ethnicity", "value": "6"},
+                        {"display": "Other / Unknown", "value": "7"}
+                    ]
+                },
+                {
+                    "name": "education_level",
+                    "display": "What is the highest level of education you have completed?", 
+                    "type": "select",
+                    "options": [
+                        {"display": "High school degree or equivalent (e.g., GED)", "value": "1"},
+                        {"display": "Some college but no degree", "value": "2"},
+                        {"display": "Associate degree", "value": "3"},
+                        {"display": "Bachelor's degree", "value": "4"},
+                        {"display": "Master's degree", "value": "5"},
+                        {"display": "Doctorate / Post-doctoral degree", "value": "6"}
+            
+                    ]
+                },
+                {
+                    "name": "autism_status",
+                    "display": "What is your autism status?", 
+                    "type": "select",
+                    "options": [
+                        {"display": "I am not autistic.", "value": "1"},
+                        {"display": "I am autistic and I have a diagnosis from a clinician.", "value": "2"},
+                        {"display": "I am autistic and I do not have a diagnosis from a clinician.", "value": "3"},
+                        {"display": "I think I might be autistic", "value": "4"},
+                        {"display": "I am not sure.", "value": "5"}
+                    ]
+                },
+                {
+                    "display": "What is your attention deficit hyperactivity disorder (ADHD) status?", 
+                    "name": "adhd_status",
+                    "type": "select",
+                    "options": [
+                        {"display": "I do not have ADHD.", "value": "1"},
+                        {"display": "I have ADHD and I have a diagnosis from a clinician.", "value": "2"},
+                        {"display": "I have ADHD and I do not have a diagnosis from a clinician.", "value": "3"},
+                        {"display": "I think I might have ADHD.", "value": "4"},
+                        {"display": "I am not sure.", "value": "5"}
+                    ]
+                }
+            ]
+        }
+    ]
+}

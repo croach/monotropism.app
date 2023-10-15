@@ -1,15 +1,15 @@
 import { shuffle } from '$lib/utils.js'
 import { calcMonotropismScore, getQuestionnaireStats } from '$lib/stats.js'
-import questions from '$lib/data/questions.json'
+import questionnaire from '$lib/data/questionnaire.json'
 import { pb } from '$lib/pocketbase.js'
 import { redirect } from '@sveltejs/kit';
 
 
 /** @type {import('./$types').PageLoad} */
 export function load({ params }) {
-    shuffle(questions)
+    shuffle(questionnaire.questions)
     return {
-        questions: questions
+        questions: questionnaire.questions
     };
 }
 
@@ -26,8 +26,8 @@ export const actions = {
 
         // Pull the answers out of the form data and format the data into an object with the question number as the key 
         // and the answer as the value (e.g., { "1": 5, "2": 4, ... }})
-        const survey = Array.from(formData.entries())
-        const answers = survey
+        const formDataEntries = Array.from(formData.entries())
+        const answers = formDataEntries
             .filter(([key, ]) => key.startsWith('answer'))
             .reduce( 
                 (obj, [num, val]) => (obj[num.slice(7, -1)] = parseInt(val), obj), 
@@ -41,14 +41,14 @@ export const actions = {
             const submissionResponse = await pb.collection('submissions').create(submission)
 
             // Pull the demographics information
-            const demographics = survey
+            const demographics = formDataEntries
                 .filter(([key, ]) => !key.startsWith('answer'))
                 .reduce( 
                     (obj, [key, val]) => (obj[key] = (val === "") ? -1 : parseInt(val), obj), 
                     {}
                 )
             demographics["submission"] = submissionResponse.id
-            demographics['version'] = '1.0.0'
+            demographics["version"] = questionnaire.demographicsSurvey[0].version
             console.log(demographics);
             
             const demographicsResponse = await pb.collection('demographics').create(demographics);
