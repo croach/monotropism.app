@@ -35,6 +35,14 @@ export const actions = {
             
         // If the user chose to save the data, create a new submission and redirect to them to the results page
         if (saveData) {
+            // Pull the demographics information
+            const demographics = survey
+                .filter(([key, ]) => !key.startsWith('answer'))
+                .reduce( 
+                    (obj, [key, val]) => (obj[key] = val, obj), 
+                    {}
+                )
+
             // Stringify the submission so we can store it in the database
             const data = { submission: JSON.stringify(answers) }
             const record = await pb.collection('submissions').create(data)
