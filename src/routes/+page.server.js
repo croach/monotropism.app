@@ -4,6 +4,7 @@ import questions from '$lib/data/questions.json'
 import { pb } from '$lib/pocketbase.js'
 import { redirect } from '@sveltejs/kit';
 
+
 /** @type {import('./$types').PageLoad} */
 export function load({ params }) {
     shuffle(questions)
@@ -35,18 +36,25 @@ export const actions = {
             
         // If the user chose to save the data, create a new submission and redirect to them to the results page
         if (saveData) {
+            // Stringify the submission so we can store it in the database
+            const submission = { submission: JSON.stringify(answers) }
+            const submissionResponse = await pb.collection('submissions').create(submission)
+
             // Pull the demographics information
             const demographics = survey
                 .filter(([key, ]) => !key.startsWith('answer'))
                 .reduce( 
-                    (obj, [key, val]) => (obj[key] = val, obj), 
+                    (obj, [key, val]) => (obj[key] = (val === "") ? -1 : parseInt(val), obj), 
                     {}
                 )
+            demographics["submission"] = submissionResponse.id
+            demographics['version'] = '1.0.0'
+            console.log(demographics);
+            
+            const demographicsResponse = await pb.collection('demographics').create(demographics);
+            console.log(demographicsResponse);
 
-            // Stringify the submission so we can store it in the database
-            const data = { submission: JSON.stringify(answers) }
-            const record = await pb.collection('submissions').create(data)
-            throw redirect(302, `${record.id}`)
+            throw redirect(302, `${submissionResponse.id}`)
         } 
         
         // Otherwise, just return the data
